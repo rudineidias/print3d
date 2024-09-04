@@ -4,8 +4,104 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    
+    <div class="container">
+        <form class="form-container">
+            <h1>Cadastro de Insumos</h1>
+            <div class="form-group">
+                <label for="data">Data da Compra:</label>
+                <input type="date" id="data" name="data">
+            </div>
+        
+            <div class="form-group">
+                <label for="fornecedor">Fornecedor:</label>
+                <input type="text" id="fornecedor" name="fornecedor">
+            </div>
+        
+            <div class="form-group">
+                <label for="nf">Nota Fiscal:</label>
+                <input type="text" id="nf" name="nf">
+            </div>
+        
+            <div class="form-group">
+                <label for="insumo">Insumo/Peça:</label>
+                <input type="text" id="insumo" name="insumo">
+            </div>
+        
+            <div class="form-group">
+                <label for="unidade">Unidade de Medida:</label>
+                <select id="unidade" name="unidade">
+                    <option value="unidade">Unidade</option>
+                    <option value="metro">Metro</option>
+                    <option value="quilograma">Quilograma</option>
+                </select>
+            </div>
+
+            <div class="form-group quantity-group">
+                <div>
+                    <label for="quantidade">Quantidade:</label>
+                    <input type="number" id="quantidade" name="quantidade">
+                </div>
+                <div>
+                    <label for="custoTotal">Custo Total:</label>
+                    <input type="number" id="custoTotal" name="custoTotal">
+                </div>
+                <div>
+                    <label for="custoIndividual">Custo Individual:</label>
+                    <input type="number" id="custoIndividual" name="custoIndividual" readonly>
+                </div>
+            </div>
+            
+        
+            <div class="form-group">
+                <label for="dataValidade">Data de Validade:</label>
+                <input type="date" id="dataValidade" name="dataValidade">
+            </div>
+        
+            <div class="form-group">
+                <label for="lote">Lote:</label>
+                <input type="text" id="lote" name="lote">
+            </div>
+        
+            <div class="form-group">
+                <label for="observacoes">Observações:</label>
+                <textarea id="observacoes" name="observacoes"></textarea>
+            </div>
+        
+            <input type="submit" value="Cadastrar">
+        </form>
+    </div>
+
+    <script lang="javascript">
+
+        // Obtém os elementos HTML dos campos
+        const custoTotalInput = document.getElementById('custoTotal');
+        const quantidadeInput = document.getElementById('quantidade');
+        const custoIndividualInput = document.getElementById('custoIndividual');
+
+        function calcularCustoIndividual() {
+          
+            // Obtém os valores dos campos e converte para números
+            const custoTotal = parseFloat(custoTotalInput.value);
+            const quantidade = parseFloat(quantidadeInput.value);
+          
+            // Verifica se os valores são números válidos
+            if (!isNaN(custoTotal) && !isNaN(quantidade) && quantidade !== 0) {
+              // Calcula o custo individual e exibe o resultado
+              const custoIndividual = custoTotal / quantidade;
+              custoIndividualInput.value = custoIndividual.toFixed(2); // Formata com duas casas decimais
+            } else {
+              // Exibe uma mensagem de erro (opcional)
+              alert('Por favor, insira valores numéricos válidos para custo total e quantidade.');
+            }
+        }
+
+        // Adiciona os event listeners 'onchange'
+        custoTotalInput.addEventListener('change', calcularCustoIndividual);
+        quantidadeInput.addEventListener('change', calcularCustoIndividual);          
+    </script>
+
 </body>
 </html>
