@@ -15,6 +15,23 @@ body{
     background-color:#6B6050;
 }
 
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th, td {
+  border: 1px solid #6B6050;
+  padding: 8px;
+  text-align: left;
+  background-color: #f2f2f2;   
+}
+
+th {
+  background-color: #EBA13B;
+
+}
+
 .fontBase {
     color:#EBA13B;
     font-size:large;
@@ -109,7 +126,16 @@ body{
     align-items: center;
     height: 100vh; /* Ajuste conforme necessário */
   }
-  
+
+.table-container {
+    max-width: 100%;
+    margin-top: 30px;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
 .form-container {
     max-width: 750px;
     display: flex;
@@ -151,4 +177,22 @@ body{
   
   button:hover {
     background-color: #506B58;
+  }
+
+  /* Remove borda e fundo do botão */
+  .buttonSvg {
+    background: none;
+    border: none;
+    padding: 5px;
+    cursor: pointer;
+  }
+
+  /* Ajusta o tamanho do botão e centraliza o conteúdo */
+  .buttonSvg svg {
+    vertical-align: middle;
+  }
+
+  /* Estilos opcionais para hover */
+  .buttonSvg:hover {
+    opacity: 0.8; /* Efeito de hover */
   }

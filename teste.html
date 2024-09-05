@@ -3,24 +3,10 @@
 <head>
   <title>Meu SVG</title>
   <style>
-    /* Remove borda e fundo do botão */
-    button {
-      background: none;
-      border: none;
-      padding: 5px;
-      cursor: pointer;
-    }
 
-    /* Ajusta o tamanho do botão e centraliza o conteúdo */
-    button svg {
-      vertical-align: middle;
-    }
-
-    /* Estilos opcionais para hover */
-    button:hover {
-      opacity: 0.8; /* Efeito de hover */
-    }
   </style>
+  <script src="app.js"></script>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <!-- Definição do SVG -->
@@ -36,22 +22,22 @@
   </svg>
 
   <!-- Botões com o ícone -->
-  <button>
+  <button class="buttonSvg">
     <svg width="15px" height="15px" fill="#578dd2">
       <use href="#editIcon" />
     </svg>
   </button>
-  <button>
+  <button class="buttonSvg">
     <svg width="20px" height="15px">
       <use href="#editIcon" />
     </svg>
   </button>
-  <button>
+  <button class="buttonSvg">
     <svg width="20px" height="15px">
       <use href="#editIcon" />
     </svg>
   </button>
-  <button>
+  <button class="buttonSvg">
     <svg width="20px" height="15px">
       <use href="#editIcon" />
     </svg>
